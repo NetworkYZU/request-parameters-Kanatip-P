@@ -5,9 +5,11 @@
  */
 package lendle.courses.network.requestparameterservlet;
 
+import java.awt.Checkbox;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
+import javafx.scene.control.RadioButton;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -48,6 +50,18 @@ public class ProcessServlet extends HttpServlet {
                 out.println(name+"");
                 out.println(request.getParameter(name)+"<br/>");
             }
+            String[] group1 =request.getParameterValues("group1");
+            String[] group2 =request.getParameterValues("group2");
+            
+            for(int i =0;i<group1.length;i++){
+            out.println(("group1 ="+i+" "+(group1[i]))+"<br/>");
+            }
+            for(int i =0;i<group1.length;i++){
+            out.println(("group2 ="+i+" "+(group2[i]))+"<br/>");
+            }
+            
+            
+            
             //out.println(request.getParameter("username"));
             out.println("</body>");
             out.println("</html>");
